@@ -4,11 +4,17 @@
 package linked.list;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+    private static final LinkedList<Integer> list1 = new LinkedList<>();
+
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        list1.insert(1);
+        list1.insert(2);
+        list1.insert(3);
+        list1.insert(4);
+        list1.insert(5);
+
+
+        System.out.println(list1.listString());
     }
 }
