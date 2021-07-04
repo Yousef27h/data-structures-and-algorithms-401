@@ -18,7 +18,6 @@ public class Node {
         this.next = next;
     }
 
-
     public Node getNext() {
         return next;
     }
