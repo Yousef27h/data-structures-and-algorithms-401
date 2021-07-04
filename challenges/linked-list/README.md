@@ -1,4 +1,4 @@
-# Singly Linked List
+# Class 05
 
 ## Challenge
 
@@ -18,6 +18,8 @@ Arguments: none
 Returns: a string representing all the values in the Linked List, formatted as:
 "{ a } -> { b } -> { c } -> NULL"
 
+
+
 ## Approach & Efficiency
 ![linked](./linked.jpeg)
 
@@ -35,3 +37,25 @@ Indicates whether that value exists as a Node’s value somewhere within the lis
 Arguments: none
 Returns: a string representing all the values in the Linked List, formatted as:
 "{ a } -> { b } -> { c } -> NULL"
+
+
+# Class 06
+
+## Challenge
+
+
+- append
+arguments: new value
+adds a new node with the given value to the end of the list
+
+- insert before
+arguments: value, new value
+adds a new node with the given new value immediately before the first node that has the value specified
+
+- insert after
+arguments: value, new value
+adds a new node with the given new value immediately after the first node that has the value specified
+
+## Approach & Efficiency
+
+![linked2](./challenge06.JPG)

@@ -4,7 +4,7 @@
 package linked.list;
 
 public class App {
-    private static final LinkedList<Integer> list1 = new LinkedList<>();
+    private static final LinkedList list1 = new LinkedList();
 
 
     public static void main(String[] args) {
@@ -13,8 +13,12 @@ public class App {
         list1.insert(3);
         list1.insert(4);
         list1.insert(5);
+        System.out.println("Is number 2 exist in our linked list? " + list1.includes(2));
 
-
+        list1.append(6);
+        list1.insertBefore(6,0);
+        list1.insertBefore(6,1);
+        list1.insertAfter(3,11);
         System.out.println(list1.listString());
     }
 }
