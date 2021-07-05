@@ -59,3 +59,18 @@ adds a new node with the given new value immediately after the first node that h
 ## Approach & Efficiency
 
 ![linked2](./challenge06.JPG)
+
+# Class 07
+# Challenge Summary
+This is extending an impementation problem, we take input k, which is a number repesents the place starting from tail of the linked list, and returns the value of the node at that place.
+
+## Whiteboard Process
+![linked2](./challenge07.JPG)
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+## Solution
+<!-- Show how to run your code, and examples of it in action -->
+To run the code you can either open the "App.java" file in "main" folder
+and test it there, or you can simply run the "test" folder which contains multiple tests

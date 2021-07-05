@@ -3,6 +3,8 @@ package linked.list;
 
 import data.Node;
 
+import java.util.ArrayList;
+
 public class LinkedList {
 
     private Node head;
@@ -100,5 +102,29 @@ public class LinkedList {
         Node afterNew = vNode.getNext();
         newNode.setNext(afterNew);
         vNode.setNext(newNode);
+    }
+
+    // get the k-th value starting by tail of linked list
+    public String getKthFromEnd(int k){
+        int size = 0;
+        ArrayList<Integer> valuesList = new ArrayList<>();
+        Node current = head;
+        if (current == null){
+            return "Array is empty! try to insert some values first";
+        }
+        while (current != null){
+            valuesList.add(current.getData());
+            current = current.getNext();
+            size++;
+        }
+        if ( k > valuesList.size() || k < 0){
+            throw new IndexOutOfBoundsException();
+        }
+        return "The number that's located at "+k+" from tail is: "+ valuesList.get((size-1) - k);
+//        System.out.println(valuesList.size());
+//        System.out.println(size);
+//        System.out.println(k);
+//        valuesList.forEach((n) -> System.out.print(n));
+
     }
 }
