@@ -10,8 +10,8 @@ public class LinkedList {
     private Node head;
 
     // insert new node at the start of linked list
-    public void insert(int data){
-            Node node = new Node(data);
+    public void insert(int data) {
+        Node node = new Node(data);
         if (head != null) {
             node.setNext(head);
         }
@@ -19,7 +19,7 @@ public class LinkedList {
     }
 
     // check for a node value if exists
-    public boolean includes (int data){
+    public boolean includes(int data) {
         if (head != null) {
             Node current = head;
             while (current.getNext() != null) {
@@ -35,16 +35,16 @@ public class LinkedList {
     }
 
     // convert linked list node values to string
-    public String listString(){
+    public String listString() {
         String message = new String("{ ");
-        if (this.head == null){
+        if (this.head == null) {
             return "There is no data in the list!";
-        }else{
+        } else {
             Node current = this.head;
-            message += current.getData()+" } -> ";
-            while(current.getNext() != null){
+            message += current.getData() + " } -> ";
+            while (current.getNext() != null) {
                 current = current.getNext();
-                message += "{ " +String.valueOf(current.getData()) + " } -> ";
+                message += "{ " + String.valueOf(current.getData()) + " } -> ";
             }
             message += "NULL";
         }
@@ -66,13 +66,13 @@ public class LinkedList {
     }
 
     // append new node to linked list
-    public void append(int n){
+    public void append(int n) {
         Node newNode = new Node(n);
-        if ( head == null){
-            head = newNode ;
-        }else{
-            Node current  = head;
-            while (current.getNext()!= null){
+        if (head == null) {
+            head = newNode;
+        } else {
+            Node current = head;
+            while (current.getNext() != null) {
                 current = current.getNext();
             }
             current.setNext(newNode);
@@ -80,10 +80,10 @@ public class LinkedList {
     }
 
     // insert a node(n) before input value(v)
-    public void insertBefore(int v, int n){
+    public void insertBefore(int v, int n) {
         Node newNode = new Node(n);
         Node current = head;
-        while (current.getNext().getData() != v){
+        while (current.getNext().getData() != v) {
             current = current.getNext();
         }
         Node nextNode = current.getNext();
@@ -92,10 +92,10 @@ public class LinkedList {
     }
 
     // insert a node (n) after input value (v)
-    public void insertAfter(int v, int n){
+    public void insertAfter(int v, int n) {
         Node current = head;
         Node newNode = new Node(n);
-        while (current.getData() != v){
+        while (current.getData() != v) {
             current = current.getNext();
         }
         Node vNode = current;
@@ -105,26 +105,45 @@ public class LinkedList {
     }
 
     // get the k-th value starting by tail of linked list
-    public String getKthFromEnd(int k){
+    public String getKthFromEnd(int k) {
         int size = 0;
         ArrayList<Integer> valuesList = new ArrayList<>();
         Node current = head;
-        if (current == null){
+        if (current == null) {
             return "Array is empty! try to insert some values first";
         }
-        while (current != null){
+        while (current != null) {
             valuesList.add(current.getData());
             current = current.getNext();
             size++;
         }
-        if ( k > valuesList.size() || k < 0){
+        if (k > valuesList.size() || k < 0) {
             throw new IndexOutOfBoundsException();
         }
-        return "The number that's located at "+k+" from tail is: "+ valuesList.get((size-1) - k);
-//        System.out.println(valuesList.size());
-//        System.out.println(size);
-//        System.out.println(k);
-//        valuesList.forEach((n) -> System.out.print(n));
+        return "The number that's located at " + k + " from tail is: " + valuesList.get((size - 1) - k);
+    }
 
+    public LinkedList zipLists(LinkedList list1, LinkedList list2) {
+        LinkedList zippedList = new LinkedList();
+        Node current1 = null;
+        Node current2 = null;
+        if (list1.head != null){
+            zippedList.append(list1.head.getData());
+            current1 = list1.head.getNext();
+        }
+        if (list2.head != null){
+            zippedList.append(list2.head.getData());
+            current2 = list2.head.getNext();
+        }
+        while (current1 != null) {
+            zippedList.append(current1.getData());
+            current1 = current1.getNext();
+
+            if (current2 != null) {
+                zippedList.append(current2.getData());
+                current2 = current2.getNext();
+            }
+        }
+        return zippedList;
     }
 }

@@ -71,6 +71,21 @@ This is extending an impementation problem, we take input k, which is a number r
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
 ## Solution
-<!-- Show how to run your code, and examples of it in action -->
+To run the code you can either open the "App.java" file in "main" folder
+and test it there, or you can simply run the "test" folder which contains multiple tests
+
+# Class 08
+
+# Challenge Summary
+write a function that takes two linked lists and zip them together into one so that node alternates between the two lists and return a reference to the head of the zipped list.
+
+## Whiteboard Process
+![linked2](./challenge08.JPG)
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+## Solution
+
 To run the code you can either open the "App.java" file in "main" folder
 and test it there, or you can simply run the "test" folder which contains multiple tests
