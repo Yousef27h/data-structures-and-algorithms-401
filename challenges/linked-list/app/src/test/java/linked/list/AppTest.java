@@ -81,4 +81,40 @@ class AppTest {
         kthNumTest.insert(5);
         assertEquals(kthNumTest.getKthFromEnd(3),"The number that's located at 3 from tail is: 4");
     }
+    /*
+    Code Challenge 08
+     */
+    LinkedList list1 = new LinkedList();
+    LinkedList list2 = new LinkedList();
+    LinkedList zipList = new LinkedList();
+
+    // where both list1 & list2 have same size
+    @Test void zippedListTest() {
+        list1.insert(3);
+        list1.insert(2);
+        list1.insert(1);
+        list2.insert(0);
+        list2.insert(9);
+        list2.insert(8);
+        assertEquals(zipList.zipLists(list1, list2).listString(),"{ 1 } -> { 8 } -> { 2 } -> { 9 } -> { 3 } -> { 0 } -> NULL");
+    }
+    // Where list1 & list2 have different sizes
+    @Test void zippedListTest2() {
+        list1.insert(5);
+        list1.insert(4);
+        list1.insert(3);
+        list1.insert(2);
+        list1.insert(1);
+        list2.insert(0);
+        list2.insert(9);
+        list2.insert(8);
+        assertEquals(zipList.zipLists(list1, list2).listString(),"{ 1 } -> { 8 } -> { 2 } -> { 9 } -> { 3 } -> { 0 } -> { 4 } -> { 5 } -> NULL");
+    }
+
+    // Where one of the lists is empty
+    @Test void zippedListTest3() {
+        list1.insert(5);
+        assertEquals(zipList.zipLists(list1, list2).listString(),"{ 5 } -> NULL");
+    }
+
 }
