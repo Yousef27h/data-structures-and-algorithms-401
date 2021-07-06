@@ -8,3 +8,5 @@ coding challenges during 401 software development course at ASAC
 | 2 | Challenge-02 | [insert-shift](https://github.com/Yousef27h/data-structures-and-algorithms-401/tree/main/challenges/array-insert-shift-challenge) |
 | 3 | Challenge-05 | [linked-list](https://github.com/Yousef27h/data-structures-and-algorithms-401/blob/main/challenges/linked-list/README.md) |
 | 3 | Challenge-06 | [linked-list2](https://github.com/Yousef27h/data-structures-and-algorithms-401/blob/main/challenges/linked-list/README.md) |
+| 3 | Challenge-07 | [Kth-num](https://github.com/Yousef27h/data-structures-and-algorithms-401/blob/main/challenges/linked-list/README.md) |
+| 3 | Challenge-08 | [Zip-lists](https://github.com/Yousef27h/data-structures-and-algorithms-401/blob/main/challenges/linked-list/README.md) |
