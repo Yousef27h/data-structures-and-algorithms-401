@@ -4,6 +4,11 @@
 package linked.list;
 
 import org.junit.jupiter.api.Test;
+import queue.Queue;
+import stack.Stack;
+
+import java.util.EmptyStackException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
@@ -117,4 +122,118 @@ class AppTest {
         assertEquals(zipList.zipLists(list1, list2).listString(),"{ 5 } -> NULL");
     }
 
+}
+class stackTest{
+    /*
+    Tests for Stack class
+     */
+    // initialize empty stack
+    Stack stack = new Stack();
+    // Can successfully push onto a stack
+    @Test void  pushStackTest(){
+        stack.push(3);
+        assertEquals(3,stack.getTop().getValue());
+    }
+
+    // Can successfully push multiple values onto a stack
+    @Test void multiplePushTest(){
+        stack.push(3);
+        stack.push(4);
+        assertEquals("{ 4 } -> { 3 } -> NULL",stack.listString());
+    }
+
+    // Can successfully pop off the stack
+    @Test void popTest(){
+        stack.push(3);
+        stack.push(4);
+        assertEquals(4, stack.pop());
+    }
+
+    // Can successfully empty a stack after multiple pops
+    @Test void emptyTest(){
+        stack.push(3);
+        stack.push(4);
+        stack.push(5);
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        assertEquals(true, stack.isEmpty());
+    }
+
+    // Can successfully peek the next item on the stack
+    @Test void peekTest(){
+        stack.push(3);
+        stack.push(4);
+        assertEquals(4, stack.peek());
+    }
+
+    // Can successfully instantiate an empty stack
+    @Test void instantEmptyTest(){
+        assertEquals(true, stack.isEmpty());
+    }
+
+    // Calling pop or peek on empty stack raises exception
+    @Test void exceptionTest(){
+        Throwable exception = assertThrows(EmptyStackException.class, () -> stack.pop());
+    }
+}
+
+class queueTest{
+    /*
+    Tests for Queue class
+     */
+
+    // create new queue object instance
+    Queue queue = new Queue();
+
+    // Can successfully enqueue into a queue
+    @Test void enqueueTest(){
+        queue.enqueue(3);
+        assertEquals(3,queue.getFront().getValue());
+    }
+
+    // Can successfully enqueue multiple values into a queue
+    @Test void multipleEnqueueTest(){
+        queue.enqueue(3);
+        queue.enqueue(4);
+        queue.enqueue(5);
+        assertEquals("{ 3 } -> { 4 } -> { 5 } -> NULL",queue.listString());
+    }
+
+    // Can successfully dequeue out of a queue the expected value
+    @Test void dequeueTest(){
+        queue.enqueue(3);
+        queue.enqueue(4);
+        queue.enqueue(5);
+        assertEquals(3,queue.dequeue());
+    }
+
+    // Can successfully peek into a queue, seeing the expected value
+    @Test void peekTest(){
+        queue.enqueue(3);
+        queue.enqueue(4);
+        queue.enqueue(5);
+        assertEquals(3,queue.peek());
+    }
+
+    // Can successfully empty a queue after multiple dequeues
+    @Test void emptyTest(){
+        queue.enqueue(3);
+        queue.enqueue(4);
+        queue.enqueue(5);
+        queue.dequeue();
+        queue.dequeue();
+        queue.dequeue();
+        assertEquals("There is no data in the stack!",queue.listString());
+    }
+
+    // Can successfully instantiate an empty queue
+    @Test void instantiateTest(){
+        assertEquals("There is no data in the stack!",queue.listString());
+    }
+
+    // Calling dequeue or peek on empty queue raises exception
+    @Test void exceptionTest(){
+        Throwable exception = assertThrows(EmptyStackException.class, () -> queue.peek());
+    }
 }

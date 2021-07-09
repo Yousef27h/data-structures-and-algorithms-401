@@ -89,3 +89,80 @@ write a function that takes two linked lists and zip them together into one so t
 
 To run the code you can either open the "App.java" file in "main" folder
 and test it there, or you can simply run the "test" folder which contains multiple tests
+
+
+# Class 10
+
+# Stacks and Queues
+
+A __stack__ and a __queue__ are data structures that consist of Nodes. Each Node references the next Node in the stack, but does not reference its previous.
+
+The main difference between them is stack data structure follows Last In First Out (LIFO) principle, while  queue data structure follow Last In Last Out (LILO) principle.
+
+
+## Challenge
+
+Create a Queue class that has a front property, and it has following methods: enqueue, dequeue, peek, and isEmpty.
+Create a Stack class that has a top property, and it has following methods: push, pop, peek, and isEmpty.
+
+## Approach & Efficiency
+
+
+In all methods I only used if statements, which will give Big O space and time of 1 ,O(1).
+
+## API
+
+__Queue__ methods:
+
+- enqueue
+
+    - Arguments: value
+
+    - adds a new node with that value to the back of the queue.
+
+- dequeue
+
+   -  Arguments: none
+
+    - Returns: the value from node from the front of the queue
+
+    - Removes the node from the front of the queue
+
+- peek
+
+    - Arguments: none
+
+    - Returns: Value of the node located at the front of the queue
+
+- isEmpty
+
+    - Arguments: none
+
+    - Returns: Boolean indicating whether or not the queue is empty
+
+__Stack__ methods:
+
+- push:
+
+    - Arguments: value
+
+    - adds a new node with that value to the top of the stack .
+
+- pop:
+
+    - Arguments: none
+
+    - Returns: the value from node from the top of the stack
+
+    - Removes the node from the top of the stack
+
+
+- peek:
+
+    - Arguments: none
+    - Returns: Value of the node located at the top of the stack
+
+- isEmpty:
+
+    - Arguments: none
+    - Returns: Boolean indicating whether or not the stack is empty.

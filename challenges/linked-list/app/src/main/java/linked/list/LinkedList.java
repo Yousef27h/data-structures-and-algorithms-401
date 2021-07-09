@@ -19,11 +19,11 @@ public class LinkedList {
     }
 
     // check for a node value if exists
-    public boolean includes(int data) {
+    public boolean includes(String data) {
         if (head != null) {
             Node current = head;
             while (current.getNext() != null) {
-                if (current.getData() != data) {
+                if (Integer.toString(current.getData()) != data) {
                     current = current.getNext();
 
                 } else {
@@ -145,5 +145,17 @@ public class LinkedList {
             }
         }
         return zippedList;
+    }
+
+    // method to inverse a linked list
+    public LinkedList  inverseList(LinkedList inputList){
+        LinkedList outputList = new LinkedList();
+        Node current = inputList.head;
+        outputList.insert(current.getData());
+        while(current.getNext() != null){
+            current = current.getNext();
+            outputList.insert(current.getData());
+        }
+        return outputList;
     }
 }

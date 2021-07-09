@@ -25,10 +25,12 @@ public class App {
 //        list1.insertBefore(6,0);
 //        list1.insertBefore(6,1);
 //        list1.insertAfter(3,11);
-        LinkedList zipList = new LinkedList();
+//        LinkedList zipList = new LinkedList();
         System.out.println(list1.listString());
         System.out.println(list2.listString());
-        System.out.println(zipList.zipLists(list1, list2).listString());
+        System.out.println(list1.inverseList(list1).listString());
+        System.out.println(list1.inverseList(list2).listString());
+//        System.out.println(zipList.zipLists(list1, list2).listString());
 //        System.out.println(list1.getKthFromEnd(1));
     }
 }
