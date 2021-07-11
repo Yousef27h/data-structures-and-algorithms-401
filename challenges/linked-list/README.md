@@ -166,3 +166,19 @@ __Stack__ methods:
 
     - Arguments: none
     - Returns: Boolean indicating whether or not the stack is empty.
+
+# Class 11
+
+# Challenge Summary
+
+
+Create a new class called pseudo queue. This PseudoQueue class will utilize 2 stack instances to create and manage the queue to implement our standard queue interface (enqueue & dequeue).
+
+## Whiteboard Process
+
+![pseudoQueue](./challenge11.JPG)
+
+## Approach & Efficiency
+
+For enqueue method I used 2 while loops, so time complexity will be O(n^2) and didn't create new data structure so space complexity will be O(1).
+For dequeue method I used an if statement, so time complexity will be O(1) and didn't create new data structure so space complexity will be O(1).
