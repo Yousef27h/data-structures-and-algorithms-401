@@ -3,7 +3,9 @@
  */
 package linked.list;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import queue.PseudoQueue;
 import queue.Queue;
 import stack.Stack;
 
@@ -236,4 +238,29 @@ class queueTest{
     @Test void exceptionTest(){
         Throwable exception = assertThrows(EmptyStackException.class, () -> queue.peek());
     }
+}
+
+class pseudoQueueTest{
+    // initialize new pseudo queue with arbitrary values enqueued
+    PseudoQueue<Integer> pseudoQueue = new PseudoQueue<>();
+    @BeforeEach void init(){
+        pseudoQueue.enqueue(1);
+        pseudoQueue.enqueue(2);
+        pseudoQueue.enqueue(3);
+    }
+    // test enqueue method
+    @Test void enqueueTest(){ assertEquals(1,pseudoQueue.peek() );}
+    // test dequeue method
+    @Test void dequeueTest(){
+        pseudoQueue.dequeue();
+        assertEquals(2, pseudoQueue.peek());
+    }
+    // test dequeue an empty queue
+    @Test void emptyTest(){
+        pseudoQueue.dequeue();
+        pseudoQueue.dequeue();
+        pseudoQueue.dequeue(); // now queue is empty
+        assertEquals("Pseudo Queue is empty!", pseudoQueue.dequeue());
+    }
+
 }
