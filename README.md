@@ -13,3 +13,4 @@ coding challenges during 401 software development course at ASAC
 | 7 | Challenge-10 | [Stack&Queue](https://github.com/Yousef27h/data-structures-and-algorithms-401/blob/main/challenges/linked-list/README.md) |
 | 8 | Challenge-11 | [Pseudo Queue](https://github.com/Yousef27h/data-structures-and-algorithms-401/blob/main/challenges/linked-list/README.md) |
 |9 | Challenge-12 | [Animal Shilter](https://github.com/Yousef27h/data-structures-and-algorithms-401/blob/main/challenges/linked-list/README.md) |
+|9 | Challenge-13 | [Balance Brackets](https://github.com/Yousef27h/data-structures-and-algorithms-401/blob/main/challenges/linked-list/README.md) |
