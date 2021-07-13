@@ -21,7 +21,7 @@ Returns: a string representing all the values in the Linked List, formatted as:
 
 
 ## Approach & Efficiency
-![linked](./linked.jpeg)
+![linked](./assets/linked.jpeg)
 
 ## API
 
@@ -58,14 +58,14 @@ adds a new node with the given new value immediately after the first node that h
 
 ## Approach & Efficiency
 
-![linked2](./challenge06.JPG)
+![linked2](./assets/challenge06.JPG)
 
 # Class 07
 # Challenge Summary
 This is extending an impementation problem, we take input k, which is a number repesents the place starting from tail of the linked list, and returns the value of the node at that place.
 
 ## Whiteboard Process
-![linked2](./challenge07.JPG)
+![linked2](./assets/challenge07.JPG)
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
@@ -80,7 +80,7 @@ and test it there, or you can simply run the "test" folder which contains multip
 write a function that takes two linked lists and zip them together into one so that node alternates between the two lists and return a reference to the head of the zipped list.
 
 ## Whiteboard Process
-![linked2](./challenge08.JPG)
+![linked2](./assets/challenge08.JPG)
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
@@ -176,9 +176,31 @@ Create a new class called pseudo queue. This PseudoQueue class will utilize 2 st
 
 ## Whiteboard Process
 
-![pseudoQueue](./challenge11.JPG)
+![pseudoQueue](./assets/challenge11.JPG)
 
 ## Approach & Efficiency
 
 For enqueue method I used 2 while loops, so time complexity will be O(n^2) and didn't create new data structure so space complexity will be O(1).
 For dequeue method I used an if statement, so time complexity will be O(1) and didn't create new data structure so space complexity will be O(1).
+
+# Class 12
+
+# Challenge Summary
+
+Create a class for animals that operates using a first-in, first-out approach. implements two methods:
+enqueue : takes in dog or cat objects as input and returns nothing.
+dequeue : takes in string and returns either dog or cat depends on the input
+
+## Whiteboard Process
+
+![animalShilter](./assets/challenge12.JPG)
+
+## Approach & Efficiency
+
+For enqueue method time complexity will be O(1) and didn't create new data structure so space complexity will be also O(1).
+
+For dequeue method I used an if statement and while loop, so time complexity will be O(n) and didn't create new data structure so space complexity will be O(1).
+
+## Solution
+
+To run my code you can either run the `App` file inside package "queue" or you can run "animalShelterTest" class inside `App.test` file which contains mutliple tests.

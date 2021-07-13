@@ -5,8 +5,7 @@ package linked.list;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import queue.PseudoQueue;
-import queue.Queue;
+import queue.*;
 import stack.Stack;
 
 import java.util.EmptyStackException;
@@ -263,4 +262,44 @@ class pseudoQueueTest{
         assertEquals("Pseudo Queue is empty!", pseudoQueue.dequeue());
     }
 
+}
+
+class animalShelterTest{
+    // create new object instance and add elements
+    AnimalShelter<Animal> animalShelter = new AnimalShelter<>();
+    Cat cat1 = new Cat("cat");
+    Cat cat2 = new Cat("cat");
+    Dog dog1 = new Dog("DOG");
+    Dog dog2 = new Dog("dog");
+
+    @BeforeEach
+    void test(){
+        animalShelter.enqueueAnimal(cat1);
+        animalShelter.enqueueAnimal(cat2);
+        animalShelter.enqueueAnimal(dog1);
+        animalShelter.enqueueAnimal(dog2);
+    }
+    // test if elements has been added
+    @Test void enqueueTest(){
+        assertEquals(4, animalShelter.getAnimalArray().size());
+    }
+    // test dequeue method
+    @Test void dequeueTest(){
+        animalShelter.dequeue("cat");
+        assertEquals(3, animalShelter.getAnimalArray().size());
+    }
+    // test dequeue for empty list
+    @Test void dequeueEmptyTest(){
+        animalShelter.dequeue("cat");
+        animalShelter.dequeue("cat");
+        animalShelter.dequeue("dog");
+        animalShelter.dequeue("dog");
+        assertEquals(null, animalShelter.dequeue("cat"));
+    }
+    // enqueue values other than cat or dog
+    @Test void valueTest(){
+        Animal lion = new Animal("lion");
+        animalShelter.enqueueAnimal(lion);
+        assertEquals(null, animalShelter.dequeue("lion"));
+    }
 }
