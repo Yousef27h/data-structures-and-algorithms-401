@@ -6,6 +6,7 @@ package linked.list;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import queue.*;
+import stack.BalanceBrackets;
 import stack.Stack;
 
 import java.util.EmptyStackException;
@@ -301,5 +302,25 @@ class animalShelterTest{
         Animal lion = new Animal("lion");
         animalShelter.enqueueAnimal(lion);
         assertEquals(null, animalShelter.dequeue("lion"));
+    }
+}
+
+class balanceBracketsTest{
+    BalanceBrackets balanceBrackets = new BalanceBrackets();
+    // test  with one open and closing brackets
+    @Test void oneTest(){
+        assertTrue(balanceBrackets.validateBracket("{}"));
+    }
+    // test with only opening bracket
+    @Test void openTest(){
+        assertFalse(balanceBrackets.validateBracket("{"));
+    }
+    // test with words within backets
+    @Test void wordsTest(){
+        assertTrue(balanceBrackets.validateBracket("{}{Code}[Fellows](())"));
+    }
+    // error closing doesn’t match opening .
+    @Test void matchTest(){
+        assertFalse(balanceBrackets.validateBracket("[}"));
     }
 }

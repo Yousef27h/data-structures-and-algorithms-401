@@ -204,3 +204,22 @@ For dequeue method I used an if statement and while loop, so time complexity wil
 ## Solution
 
 To run my code you can either run the `App` file inside package "queue" or you can run "animalShelterTest" class inside `App.test` file which contains mutliple tests.
+
+# Class 13
+
+# Challenge Summary
+
+write a function that accepts a string and checks whether or not the brackets in the string are balanced, and returns a boolean.
+
+## Whiteboard Process
+
+![stack-queue](./assets/challenge13.JPG)
+
+## Approach & Efficiency
+
+For this challenge  time complexity will be O(n) since I used a for loop and  created new data structure which is array list so space complexity will be also O(n).
+
+
+## Solution
+
+To run my code you can run "balanceBracketsTest" class inside `App.test` file which contains mutliple tests.
