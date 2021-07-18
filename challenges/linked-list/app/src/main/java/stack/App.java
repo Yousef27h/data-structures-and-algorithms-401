@@ -24,6 +24,12 @@ public class App {
 //        System.out.println(balanceBrackets.validateBracket("(]("));
 //        System.out.println(balanceBrackets.validateBracket("{(})"));
 //        System.out.println(balanceBrackets.validateBracket("[}"));
+        MaxStack maxStack = new MaxStack(1);
+        maxStack.push(3);
+        maxStack.push(2);
+        maxStack.push(1);
+        maxStack.push(0);
+        System.out.println(maxStack.getMax());
     }
 
 

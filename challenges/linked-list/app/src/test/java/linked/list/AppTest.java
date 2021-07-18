@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import queue.*;
 import stack.BalanceBrackets;
+import stack.MaxStack;
 import stack.Stack;
 
 import java.util.EmptyStackException;
@@ -322,5 +323,23 @@ class balanceBracketsTest{
     // error closing doesn’t match opening .
     @Test void matchTest(){
         assertFalse(balanceBrackets.validateBracket("[}"));
+    }
+}
+class maxStackTest{
+
+    @Test void oneValueTest(){
+        MaxStack maxStack = new MaxStack(2);
+        assertEquals(2,maxStack.getMax());
+    }
+    @Test void negativeValueTest(){
+        MaxStack maxStack = new MaxStack(-1);
+        assertEquals(-1,maxStack.getMax());
+    }
+    @Test void multipleValueTest(){
+        MaxStack maxStack2 = new MaxStack(-1);
+        maxStack2.push(0);
+        maxStack2.push(2);
+        maxStack2.push(1);
+        assertEquals(2,maxStack2.getMax());
     }
 }
