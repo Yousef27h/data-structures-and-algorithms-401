@@ -70,3 +70,25 @@ class AppTest {
         assertEquals(arr, binaryTree.inOrder(binaryTree.getRoot()));
     }
 }
+
+class maxTest{
+    // Finds the maximum value stored in the tree.
+    @Test void maxTest(){
+        BinaryTree<Integer> binaryTree = new BinaryTree<>();
+        binaryTree.setRoot(new Node<>(1));
+        binaryTree.getRoot().setLeftChild(new Node<>(2));
+        binaryTree.getRoot().setRightChild(new Node<>(3));
+        assertEquals(3, binaryTree.maxValue());
+    }
+    // Find max value when there is one element in tree.
+    @Test void maxTest2(){
+        BinaryTree<Integer> binaryTree = new BinaryTree<>();
+        binaryTree.setRoot(new Node<>(1));
+        assertEquals(1, binaryTree.maxValue());
+    }
+    // Find max value when there is no elements in tree.
+    @Test void maxTest3(){
+        BinaryTree<Integer> binaryTree = new BinaryTree<>();
+        assertEquals(Integer.MIN_VALUE, binaryTree.maxValue());
+    }
+}
