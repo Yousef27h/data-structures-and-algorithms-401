@@ -3,11 +3,13 @@
  */
 package trees;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import trees.binaryTree.BinaryTree;
 import trees.data.Node;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -90,5 +92,54 @@ class maxTest{
     @Test void maxTest3(){
         BinaryTree<Integer> binaryTree = new BinaryTree<>();
         assertEquals(Integer.MIN_VALUE, binaryTree.maxValue());
+    }
+}
+
+class breadthFirst{
+    BinaryTree<Integer> binaryTree = new BinaryTree<>();
+
+    @BeforeEach
+    void init() {
+
+        binaryTree.setRoot(new Node<>(1));
+        binaryTree.getRoot().setLeftChild(new Node<>(2));
+        binaryTree.getRoot().setRightChild(new Node<>(3));
+        binaryTree.getRoot().getLeftChild().setLeftChild(new Node<>(4));
+        binaryTree.getRoot().getLeftChild().setRightChild(new Node<>(5));
+        binaryTree.getRoot().getRightChild().setRightChild(new Node<>(6));
+    }
+    @Test void breadthFirst(){
+        ArrayList arrayList = new ArrayList();
+        arrayList.add(1);
+        arrayList.add(2);
+        arrayList.add(3);
+        arrayList.add(4);
+        arrayList.add(5);
+        arrayList.add(6);
+        assertEquals(arrayList, binaryTree.breadthFirst(binaryTree));
+    }
+
+    @Test void nullTest(){
+        BinaryTree<Integer> binaryTree2 = new BinaryTree<>();
+
+        Throwable exception = assertThrows(NullPointerException.class, () -> binaryTree2.breadthFirst(binaryTree2));
+    }
+
+    @Test void characterTest(){
+        BinaryTree<String> binaryTree2 = new BinaryTree<>();
+        binaryTree2.setRoot(new Node<>("A"));
+        binaryTree2.getRoot().setLeftChild(new Node<>("B"));
+        binaryTree2.getRoot().setRightChild(new Node<>("C"));
+        binaryTree2.getRoot().getLeftChild().setLeftChild(new Node<>("D"));
+        binaryTree2.getRoot().getLeftChild().setRightChild(new Node<>("E"));
+        binaryTree2.getRoot().getRightChild().setRightChild(new Node<>("F"));
+        ArrayList arrayList = new ArrayList();
+        arrayList.add("A");
+        arrayList.add("B");
+        arrayList.add("C");
+        arrayList.add("D");
+        arrayList.add("E");
+        arrayList.add("F");
+        assertEquals(arrayList, binaryTree2.breadthFirst(binaryTree2));
     }
 }

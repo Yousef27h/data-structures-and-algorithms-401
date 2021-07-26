@@ -44,3 +44,20 @@ Space complexity O(1) since I didn't use any new data structure, while time comp
 ## Solution
 
 To run and test maxValue method, one can either create new tree and call the method on that tree in `App.java` file, or run pre-written tests in `AppTest.java` file.
+
+# Challenge 17
+
+
+Write a function called breadth first, that traverse the input tree using a Breadth-first approach.
+
+## Whiteboard Process
+
+![maximum value](./assets/challenge17.JPG)
+
+## Approach & Efficiency
+
+Space complexity O(n) , while time complexity is O(w) since I used breadth traverse.
+
+## Solution
+
+To run and test maxValue method, one can either create new tree and call the method on that tree in `App.java` file, or run pre-written tests in `AppTest.java` file.
