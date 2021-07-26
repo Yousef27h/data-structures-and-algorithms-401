@@ -4,6 +4,8 @@ import org.checkerframework.checker.units.qual.A;
 import trees.data.Node;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class BinaryTree<T> {
     protected Node<T> root;
@@ -72,5 +74,26 @@ public class BinaryTree<T> {
         maxVal = traverseMax(node.getLeftChild(), maxVal);
         maxVal = traverseMax(node.getRightChild(), maxVal);
         return maxVal;
+    }
+
+
+    public ArrayList<T> breadthFirst(BinaryTree<T> binaryTree){
+          Queue<Node> breadth = new LinkedList<>();
+
+        ArrayList<T> arrayList = new ArrayList<>();
+        if (binaryTree.getRoot() == null) throw new NullPointerException();
+        breadth.add(binaryTree.getRoot());
+
+         while (breadth.peek() != null){
+            Node<T> frontNode = breadth.remove();
+            arrayList.add(frontNode.getKey());
+            if (frontNode.getLeftChild() != null){
+                breadth.add(frontNode.getLeftChild());
+            }
+            if (frontNode.getRightChild() != null){
+                breadth.add(frontNode.getRightChild());
+            }
+        }
+        return arrayList;
     }
 }

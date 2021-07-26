@@ -31,7 +31,9 @@ public class App {
 //        System.out.println(binarySearchTree.inOrder(binarySearchTree.getRoot()));
 //        System.out.println(binarySearchTree.containValue(3));
 
-        System.out.println(binaryTree.maxValue());
+//        System.out.println(binaryTree.maxValue());
 
+
+//        System.out.println(binaryTree.breadthFirst(binaryTree));
     }
 }
