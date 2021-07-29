@@ -142,4 +142,17 @@ class breadthFirst{
         arrayList.add("F");
         assertEquals(arrayList, binaryTree2.breadthFirst(binaryTree2));
     }
+
+    @Test
+    void oddSumTest(){
+        BinaryTree<Integer> binaryTree2 = new BinaryTree<>();
+            binaryTree2.setRoot(new Node<>(1));
+            binaryTree2.getRoot().setLeftChild(new Node<>(2));
+            binaryTree2.getRoot().setRightChild(new Node<>(3));
+        binaryTree2.getRoot().getLeftChild().setLeftChild(new Node<>(4));
+        binaryTree2.getRoot().getLeftChild().setRightChild(new Node<>(5));
+        binaryTree2.getRoot().getRightChild().setRightChild(new Node<>(6));
+        binaryTree2.getRoot().getRightChild().setLeftChild(new Node<>(6));
+        assertEquals(true, binaryTree.compareLeaves(binaryTree.getRoot(),binaryTree2.getRoot()));
+    }
 }

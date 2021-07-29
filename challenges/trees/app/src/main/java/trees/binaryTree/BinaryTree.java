@@ -12,6 +12,8 @@ public class BinaryTree<T> {
     private ArrayList<T> preArr = new ArrayList<>();
     private ArrayList<T> inArr = new ArrayList<>();
     private ArrayList<T> postArr = new ArrayList<>();
+    int leavesSum1 = 0;
+    int leavesSum2 = 0;
 
     public void setRoot(Node<T> root) {
         this.root = root;
@@ -76,7 +78,11 @@ public class BinaryTree<T> {
         return maxVal;
     }
 
-
+    /**
+     * Creates an array with elements ordered using breadth first traverse
+     * @param binaryTree
+     * @return array list with elements ordered
+     */
     public ArrayList<T> breadthFirst(BinaryTree<T> binaryTree){
           Queue<Node> breadth = new LinkedList<>();
 
@@ -95,5 +101,44 @@ public class BinaryTree<T> {
             }
         }
         return arrayList;
+    }
+
+//    public  int sumOfOddNums( Node<Integer> root){
+//    if ( root == null) return sum;
+//
+//        sumOfOddNums(root.getLeftChild());
+//        if (root.getKey() %2 !=0)
+//            sum+= root.getKey();
+//        sumOfOddNums(root.getRightChild());
+//        return sum;
+//    }
+
+    /**
+     * comapre two binary trees and return boolean whether they have same number of leaves or not.
+     * @param root1
+     * @param root2
+     * @return boolean
+     */
+    public boolean compareLeaves(Node root1, Node root2){
+        if (root1 == null || root2 == null) throw new NullPointerException();
+        return countLeaves(root1, leavesSum1) == countLeaves(root2, leavesSum2);
+    }
+
+    /**
+     * counts the number of leaves that a tree has.
+     * @param current
+     * @param sum
+     * @return integer
+     */
+    public int countLeaves(Node current, int sum){
+        if (current == null) return sum;
+
+        if (current.getRightChild()==null && current.getLeftChild()==null){
+            sum += 1;
+        }
+        sum = countLeaves(current.getLeftChild(), sum);
+        sum = countLeaves(current.getRightChild(), sum);
+
+        return sum;
     }
 }
