@@ -61,3 +61,20 @@ Space complexity O(n) , while time complexity is O(w) since I used breadth trave
 ## Solution
 
 To run and test maxValue method, one can either create new tree and call the method on that tree in `App.java` file, or run pre-written tests in `AppTest.java` file.
+
+# Challenge 18
+
+
+Write a function that compares two file directory structures, and return a boolean whether they have same number of leaves or not.
+
+## Whiteboard Process
+
+![maximum value](./assets/challenge18.JPG)
+
+## Approach & Efficiency
+
+Space complexity O(1) , while time complexity is O(ى) since I used recursion.
+
+## Solution
+
+To run and test maxValue method, one can either create new tree and call the method on that tree in `App.java` file, or run pre-written tests in `AppTest.java` file.
