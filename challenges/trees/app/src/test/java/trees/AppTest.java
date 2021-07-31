@@ -8,8 +8,11 @@ import org.junit.jupiter.api.Test;
 import trees.binaryTree.BinaryTree;
 import trees.data.Node;
 
+import trees.karyTree.KNode;
+import trees.karyTree.KaryTree;
+
+
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -153,6 +156,26 @@ class breadthFirst{
         binaryTree2.getRoot().getLeftChild().setRightChild(new Node<>(5));
         binaryTree2.getRoot().getRightChild().setRightChild(new Node<>(6));
         binaryTree2.getRoot().getRightChild().setLeftChild(new Node<>(6));
-        assertEquals(true, binaryTree.compareLeaves(binaryTree.getRoot(),binaryTree2.getRoot()));
+        assertEquals(false, binaryTree.compareLeaves(binaryTree.getRoot(),binaryTree2.getRoot()));
+    }
+}
+
+class karyTree{
+    KaryTree<Integer> karyTree = new KaryTree<Integer>(new KNode<Integer>(1, 3));
+
+    @BeforeEach
+    void init() {
+        karyTree.addNode(new KNode<>(2, 3));
+        karyTree.addNode(new KNode<>(3, 3));
+        karyTree.addNode(new KNode<>(4, 3));
+        karyTree.addNode(new KNode<>(5, 3));
+        karyTree.addNode(new KNode<>(6, 3));
+        karyTree.addNode(new KNode<>(15, 3));
+        karyTree.addNode(new KNode<>(8, 3));
+    }
+
+    @Test
+    void fizzBuzzTest1(){
+        assertEquals("1",karyTree.fizzBuzzTree(karyTree.getRoot()).getRoot().getKey());
     }
 }

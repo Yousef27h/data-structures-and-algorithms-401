@@ -3,25 +3,24 @@
  */
 package trees;
 
-import trees.binaryTree.BinarySearchTree;
-import trees.binaryTree.BinaryTree;
-import trees.data.Node;
+import trees.karyTree.KNode;
+import trees.karyTree.KaryTree;
 
 public class App {
 
     public static void main(String[] args) {
 
-        BinaryTree<Integer> binaryTree = new BinaryTree<>();
-
-        binaryTree.setRoot(new Node<>(1));
-        binaryTree.getRoot().setLeftChild(new Node<>(2));
-        binaryTree.getRoot().setRightChild(new Node<>(3));
-        binaryTree.getRoot().getLeftChild().setLeftChild(new Node<>(4));
-        binaryTree.getRoot().getLeftChild().setRightChild(new Node<>(5));
-        binaryTree.getRoot().getRightChild().setRightChild(new Node<>(6));
-        System.out.println("In Order: "+ binaryTree.inOrder(binaryTree.getRoot()));
-        System.out.println("Pre Order: "+binaryTree.preOrder(binaryTree.getRoot()));
-        System.out.println("Post Order: "+binaryTree.postOrder(binaryTree.getRoot()));
+//        BinaryTree<Integer> binaryTree = new BinaryTree<>();
+//
+//        binaryTree.setRoot(new Node<>(1));
+//        binaryTree.getRoot().setLeftChild(new Node<>(2));
+//        binaryTree.getRoot().setRightChild(new Node<>(3));
+//        binaryTree.getRoot().getLeftChild().setLeftChild(new Node<>(4));
+//        binaryTree.getRoot().getLeftChild().setRightChild(new Node<>(5));
+//        binaryTree.getRoot().getRightChild().setRightChild(new Node<>(6));
+//        System.out.println("In Order: "+ binaryTree.inOrder(binaryTree.getRoot()));
+//        System.out.println("Pre Order: "+binaryTree.preOrder(binaryTree.getRoot()));
+//        System.out.println("Post Order: "+binaryTree.postOrder(binaryTree.getRoot()));
 
 //        BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
 //        binarySearchTree.add(4);
@@ -35,5 +34,24 @@ public class App {
 
 
 //        System.out.println(binaryTree.breadthFirst(binaryTree));
+
+        KaryTree<Integer> karyTree = new KaryTree<Integer>(new KNode<Integer>(1, 3));
+
+        karyTree.addNode(new KNode<>(2, 3));
+        karyTree.addNode(new KNode<>(3, 3));
+        karyTree.addNode(new KNode<>(4, 3));
+        karyTree.addNode(new KNode<>(5, 3));
+        karyTree.addNode(new KNode<>(6, 3));
+        karyTree.addNode(new KNode<>(15, 3));
+        karyTree.addNode(new KNode<>(8, 3));
+
+        System.out.println(karyTree.fizzBuzzTree(karyTree.getRoot()).getRoot().getKey());
+        System.out.println(karyTree.fizzBuzzTree(karyTree.getRoot()).getRoot().getChildren().get(0).getKey());
+        System.out.println(karyTree.fizzBuzzTree(karyTree.getRoot()).getRoot().getChildren().get(1).getKey());
+        System.out.println(karyTree.fizzBuzzTree(karyTree.getRoot()).getRoot().getChildren().get(2).getKey());
+        System.out.println(karyTree.fizzBuzzTree(karyTree.getRoot()).getRoot().getChildren().get(0).getChildren().get(0).getKey());
+        System.out.println(karyTree.fizzBuzzTree(karyTree.getRoot()).getRoot().getChildren().get(0).getChildren().get(1).getKey());
+        System.out.println(karyTree.fizzBuzzTree(karyTree.getRoot()).getRoot().getChildren().get(0).getChildren().get(2).getKey());
+        System.out.println(karyTree.fizzBuzzTree(karyTree.getRoot()).getRoot().getChildren().get(1).getChildren().get(0).getKey());
     }
 }
