@@ -23,3 +23,5 @@ coding challenges during 401 software development course at ASAC
 |17 | Challenge-20 | [Insertion Sort](https://github.com/Yousef27h/data-structures-and-algorithms-401/blob/main/challenges/insertion-sort/BLOG.md) |
 |17 | Challenge-21 | [Merge Sort](https://github.com/Yousef27h/data-structures-and-algorithms-401/blob/main/challenges/merge-sort/README.md) |
 |17 | Challenge-22 | [Quick Sort](https://github.com/Yousef27h/data-structures-and-algorithms-401/blob/main/challenges/quick-sort/BLOG.md) |
+|17 | Challenge-23 | [Quick Sort](https://github.com/Yousef27h/data-structures-and-algorithms-401/blob/main/challenges/quick-sort/BLOG.md) |
+|17 | Challenge-24 | [Repeated Word](https://github.com/Yousef27h/data-structures-and-algorithms-401/blob/main/challenges/hashtables/README.md) |
