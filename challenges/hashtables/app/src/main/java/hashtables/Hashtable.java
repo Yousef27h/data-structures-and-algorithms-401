@@ -101,6 +101,34 @@ public class Hashtable<K,V> {
         }
     }
 
+    public V remove(K key){
+        int hashCode = getHash(key);
+        int index = getIndex(key);
+
+        HashNode<K,V> head = bucketsArray.get(index);
+        HashNode<K,V> prev = null;
+        while (head!=null){
+            if (head.getKey().equals(key) && head.getHashCode()==hashCode){
+                break;
+            }
+            prev = head;
+            head=head.getNext();
+        }
+
+        if (head==null){
+            return null;
+        }
+
+        hashNodesNum--;
+        if (prev!=null){
+            prev.setNext(head.getNext());
+        }else {
+            bucketsArray.set(index, head.getNext());
+        }
+
+        return head.getValue();
+    }
+
     public String getRepeatedWord(String sentence){
         String[] arrayOfWords = splitString(sentence);
         for (String word:
