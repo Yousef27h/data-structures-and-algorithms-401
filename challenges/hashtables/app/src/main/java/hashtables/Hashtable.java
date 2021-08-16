@@ -1,5 +1,8 @@
 package hashtables;
 
+import binaryTree.binaryTree.BinaryTree;
+import trees.data.Node;
+
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Objects;
@@ -9,6 +12,7 @@ public class Hashtable<K,V> {
     private ArrayList<HashNode<K,V>> bucketsArray;
     private int bucketsNum;
     private int hashNodesNum;
+    private ArrayList<K> traverseArr = new ArrayList<>();
 
     /**
      * Constructor to instantiate new hashtable with specific buckets and hashNode number
@@ -166,8 +170,32 @@ public class Hashtable<K,V> {
         index = index < 0 ? index*-1 : index;
         return index;
     }
+
     public String[] splitString(String sentence){
         sentence = sentence.replaceAll("[^a-zA-Z0-9]", " ");
         return sentence.split(" ");
+    }
+
+    public ArrayList<K> getIntersection(BinaryTree<K> binaryTree1, BinaryTree<K> binaryTree2){
+        ArrayList<K> treeArr1 = traverseBinaryTree(binaryTree1.getRoot());
+        traverseArr = new ArrayList<>();
+        ArrayList<K> treeArr2 = traverseBinaryTree(binaryTree2.getRoot());
+        ArrayList<K> intersectArr = new ArrayList<>();
+        for (K key: treeArr1) {
+            this.add(key, (V) key);
+        }
+        for (K key: treeArr2){
+            if (this.findValue(key) != null) intersectArr.add(key);
+        }
+        return intersectArr;
+    }
+
+    public ArrayList<K> traverseBinaryTree(Node<K> node){
+        if (node != null) {
+            traverseArr.add( node.getKey());
+            traverseBinaryTree(node.getLeftChild());
+            traverseBinaryTree(node.getRightChild());
+        }
+        return traverseArr;
     }
 }

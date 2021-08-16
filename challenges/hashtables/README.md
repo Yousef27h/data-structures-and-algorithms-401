@@ -52,3 +52,32 @@ clone down this repo.
 Make sure you have modified the applicaton.properties file with your own environment variables:
 
 To run this code you can either run the App.java file inside src/main/java/insertion/sort folder, which contains four array samples to run the insertion sort method on, or you can simple run the AppTest.java file which contains multiple tests to test our method.
+
+# Code Challenge: Class 32
+
+Find all values found to be in 2 binary trees.
+
+Arguments: two binary trees
+Return: array
+
+## Whiteboard Process
+
+![intersection](./intersection.JPG)
+
+## Approach & Efficiency
+
+time complexity in worst O(n^2)
+
+space complexity O(n)
+
+## Solution
+
+To run the server application,
+
+clone down this repo.
+
+'cd' into the cloned repository in your terminal
+
+Make sure you have modified the applicaton.properties file with your own environment variables:
+
+To run this code you can either run the App.java file inside src/main/java/insertion/sort folder, which contains four array samples to run the insertion sort method on, or you can simple run the AppTest.java file which contains multiple tests to test our method.

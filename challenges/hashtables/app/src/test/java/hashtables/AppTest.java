@@ -3,7 +3,12 @@
  */
 package hashtables;
 
+import binaryTree.binaryTree.BinaryTree;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
@@ -22,5 +27,56 @@ class AppTest {
     @Test void getRepeatedWordTest3(){
         Hashtable<String, String> wordsHashtable = new Hashtable<>();
         assertEquals("summer", wordsHashtable.getRepeatedWord( "It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York..."));
+    }
+}
+class IntersectionTest{
+    BinaryTree<Integer> binaryTree1;
+    BinaryTree<Integer> binaryTree2;
+    Hashtable<Integer,Integer> hashtable;
+
+    @BeforeEach
+    public void addNodeTree(){
+        binaryTree1 = new BinaryTree<>();
+         binaryTree2 = new BinaryTree<>();
+         hashtable = new Hashtable<>();
+        binaryTree1.setRoot(new trees.data.Node<Integer>(0));
+        binaryTree2.setRoot(new trees.data.Node<Integer>(0));
+        binaryTree1.getRoot().setLeftChild(new trees.data.Node<Integer>(1));
+        binaryTree1.getRoot().setRightChild(new trees.data.Node<Integer>(2));
+        binaryTree2.getRoot().setRightChild(new trees.data.Node<Integer>(2));
+        binaryTree2.getRoot().setLeftChild(new trees.data.Node<Integer>(3));
+    }
+
+    @Test
+    public void testIntersect1(){
+        ArrayList<Integer> actual = new ArrayList<>();
+        actual.add(0);
+        actual.add(2);
+        assertEquals(actual,hashtable.getIntersection(binaryTree1,binaryTree2));
+    }
+
+    @Test
+    public void testIntersect2(){
+        BinaryTree<Integer> binaryTree3 = new BinaryTree<>();
+        ArrayList<Integer> actual = new ArrayList<>();
+        assertEquals(actual,hashtable.getIntersection(binaryTree1,binaryTree3));
+    }
+
+    @Test
+    public void testIntersection3(){
+        BinaryTree<String> binaryTree4 = new BinaryTree<>();
+        BinaryTree<String> binaryTree5 = new BinaryTree<>();
+        Hashtable<String,String> hashtable2 = new Hashtable<>();
+        binaryTree4.setRoot(new trees.data.Node<String>("a"));
+        binaryTree4.getRoot().setLeftChild(new trees.data.Node<String>("b"));
+        binaryTree4.getRoot().setRightChild(new trees.data.Node<String>("c"));
+        binaryTree5.setRoot(new trees.data.Node<String>("d"));
+        binaryTree5.getRoot().setLeftChild(new trees.data.Node<String>("e"));
+        binaryTree5.getRoot().setRightChild(new trees.data.Node<String>("a"));
+
+        ArrayList<String> actual = new ArrayList<>();
+        actual.add("a");
+        assertEquals(actual,hashtable2.getIntersection(binaryTree4,binaryTree5));
+
     }
 }
