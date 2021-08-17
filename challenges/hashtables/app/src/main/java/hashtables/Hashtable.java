@@ -139,8 +139,8 @@ public class Hashtable<K,V> {
              arrayOfWords) {
             word = word.toLowerCase(Locale.ROOT);
             if (word.isEmpty()) continue;
-            int index =getStringIndex(word);
-            int hashCode = hashString(word);
+            int index =getIndex((K) word);
+            int hashCode = getHash((K) word);
             HashNode<K,V> head = bucketsArray.get(index);
             while (head != null){
                 if (head.getKey().equals(word) && head.getHashCode()==hashCode){
@@ -156,20 +156,6 @@ public class Hashtable<K,V> {
         return "There is no repeated word!";
     }
 
-    public int hashString(String word){
-        int totalSum = 0;
-        for (int i=0; i<word.length();i++){
-            totalSum += (int) word.charAt(i);
-        }
-        return totalSum;
-    }
-
-    public int getStringIndex(String word){
-        int hashCode = hashString(word);
-        int index = hashCode % bucketsNum;
-        index = index < 0 ? index*-1 : index;
-        return index;
-    }
 
     public String[] splitString(String sentence){
         sentence = sentence.replaceAll("[^a-zA-Z0-9]", " ");
