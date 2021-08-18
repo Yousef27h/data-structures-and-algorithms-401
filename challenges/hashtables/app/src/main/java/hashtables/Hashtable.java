@@ -13,6 +13,8 @@ public class Hashtable<K,V> {
     private int bucketsNum;
     private int hashNodesNum;
     private ArrayList<K> traverseArr = new ArrayList<>();
+    private ArrayList<K> keys = new ArrayList<>();
+    private ArrayList<V> values = new ArrayList<>();
 
     /**
      * Constructor to instantiate new hashtable with specific buckets and hashNode number
@@ -25,6 +27,14 @@ public class Hashtable<K,V> {
         for (int i =0 ;i<bucketsNum;i++){
             bucketsArray.add(null);
         }
+    }
+
+    public ArrayList<K> getKeys() {
+        return keys;
+    }
+
+    public ArrayList<V> getValues() {
+        return values;
     }
 
     /**
@@ -83,6 +93,8 @@ public class Hashtable<K,V> {
 
         head = bucketsArray.get(index);
         hashNodesNum++;
+        keys.add(key);
+        values.add(value);
         HashNode<K,V> newNode = new HashNode<>(key,value,getHash(key));
         newNode.setNext(head);
         bucketsArray.set(index,newNode);
@@ -124,6 +136,7 @@ public class Hashtable<K,V> {
         }
 
         hashNodesNum--;
+        keys.remove(key);
         if (prev!=null){
             prev.setNext(head.getNext());
         }else {
@@ -131,6 +144,19 @@ public class Hashtable<K,V> {
         }
 
         return head.getValue();
+    }
+
+    public boolean contains(K key){
+        int hashCode = getHash(key);
+        int index = getIndex(key);
+        HashNode<K,V> head = bucketsArray.get(index);
+        while (head!= null){
+            if (head.getKey().equals(key) && head.getHashCode()==hashCode){
+                return true;
+            }
+            head=head.getNext();
+        }
+        return false;
     }
 
     public String getRepeatedWord(String sentence){
@@ -183,5 +209,33 @@ public class Hashtable<K,V> {
             traverseBinaryTree(node.getRightChild());
         }
         return traverseArr;
+    }
+
+    public Hashtable<String,ArrayList<String>> leftJoin(Hashtable<String,String> left,Hashtable<String,String> right){
+        Hashtable<String,ArrayList<String>> newHash = new Hashtable<>();
+        ArrayList<String> values;
+
+        for (String key:
+             left.getKeys()) {
+            values = new ArrayList<>();
+            if (right.contains(key)){
+                values.add(left.findValue(key));
+                values.add(right.findValue(key));
+                newHash.add(key,values);
+                continue;
+            }
+            values.add(left.findValue(key));
+            values.add("NULL");
+            newHash.add(key,values);
+        }
+        return newHash;
+    }
+
+    @Override
+    public String toString() {
+        return "Hashtable{" +
+                "keys=" + keys +
+                ", values=" + values +
+                '}';
     }
 }
