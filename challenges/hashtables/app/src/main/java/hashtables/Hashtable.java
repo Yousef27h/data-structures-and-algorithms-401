@@ -4,6 +4,7 @@ import binaryTree.binaryTree.BinaryTree;
 import trees.data.Node;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
 
@@ -230,6 +231,7 @@ public class Hashtable<K,V> {
         }
         return newHash;
     }
+
 
     @Override
     public String toString() {

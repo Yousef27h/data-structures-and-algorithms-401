@@ -26,25 +26,29 @@ public class App {
 //        System.out.println(hashtable.getIntersection(binaryTree1,binaryTree2));
 //Hashtable<String, String> wordsHashtable = new Hashtable<>();
 //        System.out.println(wordsHashtable.getRepeatedWord("Once upon a time, there was a brave princess who..."));
-        Hashtable<String,String> left = new Hashtable<>();
-        Hashtable<String,String> right = new Hashtable<>();
-
-        left.add("fond","enamored");
-        left.add("outfil","garb");
-
-        right.add("fond","averse");
-        right.add("guide","follow");
-
-        Hashtable<String, ArrayList<String>> newHash = left.leftJoin(left,right);
+//        Hashtable<String,String> left = new Hashtable<>();
+//        Hashtable<String,String> right = new Hashtable<>();
+//
+//        left.add("fond","enamored");
+//        left.add("outfil","garb");
+//
+//        right.add("fond","averse");
+//        right.add("guide","follow");
+//
+//        Hashtable<String, ArrayList<String>> newHash = left.leftJoin(left,right);
 
 //        ArrayList<String> keys = newHash.leftJoin(left,right).getKeys();
-        System.out.println(newHash.getValues());
-        System.out.println(newHash.toString());
+//        System.out.println(newHash.getValues());
+//        System.out.println(newHash.toString());
 //        for (String key:
 //                keys) {
 //            System.out.println(newHash.findValue(key));
 //            System.out.println(key);
 //
 //        }
+        String name= "My Name is Yousef";
+
+        Unique unique = new Unique();
+        System.out.println(unique.isUnique("Yousef nam"));
     }
 }
