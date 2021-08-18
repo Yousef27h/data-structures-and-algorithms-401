@@ -80,3 +80,32 @@ class IntersectionTest{
 
     }
 }
+
+class LeftJoinTest{
+    Hashtable<String,String> left;
+    Hashtable<String,String> right;
+    @BeforeEach
+    void createHashtable(){
+        left = new Hashtable<>();
+        right = new Hashtable<>();
+
+    }
+    @Test
+    void leftJoinTest(){
+        left.add("fond","enamored");
+        left.add("outfil","garb");
+        right.add("fond","averse");
+        right.add("outfil","follow");
+        Hashtable<String, ArrayList<String>> newHash = left.leftJoin(left,right);
+        assertEquals("Hashtable{keys=[fond, outfil], values=[[enamored, averse], [garb, follow]]}",newHash.toString());
+    }
+    @Test
+    void leftJoinTest2(){
+        left.add("fond","enamored");
+        left.add("outfil","garb");
+        right.add("fond","averse");
+        right.add("guide","follow");
+        Hashtable<String, ArrayList<String>> newHash = left.leftJoin(left,right);
+        assertEquals("Hashtable{keys=[fond, outfil], values=[[enamored, averse], [garb, NULL]]}",newHash.toString());
+    }
+}
