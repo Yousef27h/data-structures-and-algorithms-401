@@ -81,3 +81,35 @@ clone down this repo.
 Make sure you have modified the applicaton.properties file with your own environment variables:
 
 To run this code you can either run the App.java file inside src/main/java/insertion/sort folder, which contains four array samples to run the insertion sort method on, or you can simple run the AppTest.java file which contains multiple tests to test our method.
+
+## Code Challenge: Class 33
+
+Implement a simplified LEFT JOIN for 2 Hashmaps.
+
+Arguments: two hash maps
+
+Return: a hash map achieves the LEFT JOIN logic
+
+## Whiteboard Process
+
+![leftJoin](./leftJoin.JPG)
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+
+## Code Challenge: Class 34
+
+write a function that will determine if the given string is full of unique characters.
+
+Arguments: String
+
+Return: boolean
+
+## Whiteboard Process
+
+![Unique Characters](./uniqueCharacters.png)
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
