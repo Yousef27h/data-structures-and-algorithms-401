@@ -1,6 +1,5 @@
 package linked.list;
 
-
 import data.Node;
 
 import java.util.ArrayList;
@@ -135,10 +134,11 @@ public class LinkedList {
             zippedList.append(list2.head.getData());
             current2 = list2.head.getNext();
         }
-        while (current1 != null) {
-            zippedList.append(current1.getData());
-            current1 = current1.getNext();
-
+        while (current1 != null || current2 != null) {
+            if (current1 != null){
+                zippedList.append(current1.getData());
+                current1 = current1.getNext();
+            }
             if (current2 != null) {
                 zippedList.append(current2.getData());
                 current2 = current2.getNext();
@@ -151,7 +151,7 @@ public class LinkedList {
     public LinkedList  inverseList(LinkedList inputList){
         LinkedList outputList = new LinkedList();
         Node current = inputList.head;
-        outputList.insert(current.getData());
+        outputList.insert(current.getData());[1]
         while(current.getNext() != null){
             current = current.getNext();
             outputList.insert(current.getData());

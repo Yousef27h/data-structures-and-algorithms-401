@@ -6,6 +6,7 @@ import binaryTree.binaryTree.BinaryTree;
 import trees.data.Node;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.*;
 
 public class App {
@@ -46,9 +47,9 @@ public class App {
 //            System.out.println(key);
 //
 //        }
-        String name= "My Name is Yousef";
-
-        Unique unique = new Unique();
-        System.out.println(unique.isUnique("Yousef nam"));
+//        String name= "My Name is Yousef";
+//
+//        Unique unique = new Unique();
+//        System.out.println(unique.isUnique("Yousef nam"));
     }
 }
