@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5b97121a-378e-4fbd-a5b6-81879695e674" name="Default Changelist" comment="" />
+    <list default="true" id="5b97121a-378e-4fbd-a5b6-81879695e674" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hashtables/app/src/main/java/hashtables/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/hashtables/app/src/main/java/hashtables/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked-list/app/src/main/java/linked/list/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/linked-list/app/src/main/java/linked/list/LinkedList.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,6 +34,7 @@
       <option name="presentableId" value="Default" />
       <updated>1625569674168</updated>
       <workItem from="1629113630315" duration="388000" />
+      <workItem from="1629379962563" duration="1304000" />
     </task>
     <servers />
   </component>
