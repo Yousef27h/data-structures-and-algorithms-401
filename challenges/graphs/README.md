@@ -14,7 +14,11 @@ Implement your own Graph. The graph should be represented as an adjacency list.
 
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+- addNode: Time complexity O(1), space complexity O(n).
+- addEdge: Time complexity O(1), space complexity O(1).
+- getNodes: Time complexity O(n), space complexity O(1).
+- getNeighbors: Time complexity O(1), space complexity O(1).
 
 ## API
 
