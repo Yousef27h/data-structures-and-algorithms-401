@@ -33,7 +33,7 @@ Adds a new edge between two nodes in the graph , and assign a weight to the edge
 Both nodes should already be in the Graph
 - getNodes
 Arguments: none
-Returns all of the nodes in the graph as a collection.
+Returns all the nodes in the graph as a collection.
 - get neighbors
 Arguments: node
 Returns a collection of edges connected to the given node
@@ -41,3 +41,56 @@ Include the weight of the connection in the returned collection
 - size
 Arguments: none
 Returns the total number of nodes in the graph
+
+# Challenge 36
+
+Implement a breadth-first traversal on a graph.
+
+Arguments: Node
+
+Return: A collection of nodes in the order they were visited.
+
+## Whiteboard Process
+
+![BFT](./bft.JPG)
+
+
+## Solution
+
+
+To run the server application,
+
+clone down this repo.
+
+'cd' into the cloned repository in your terminal
+
+Make sure you have modified the applicaton.properties file with your own environment variables:
+
+To run this code you can either run the App.java file inside src/main/java/insertion/sort folder, which contains four array samples to run the insertion sort method on, or you can simple run the AppTest.java file which contains multiple tests to test our method.
+
+# Challenge 36
+
+Write a function that determines whether the trip is possible with direct flights, and how much it would cost.
+
+Arguments: graph, array of city names
+
+Return: String
+
+## Whiteboard Process
+
+![BFT](./tripCost.JPG)
+
+
+## Solution
+
+
+To run the server application,
+
+clone down this repo.
+
+'cd' into the cloned repository in your terminal
+
+Make sure you have modified the applicaton.properties file with your own environment variables:
+
+To run this code you can either run the App.java file inside src/main/java/insertion/sort folder, which contains four array samples to run the insertion sort method on, or you can simple run the AppTest.java file which contains multiple tests to test our method.
+

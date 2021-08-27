@@ -4,6 +4,9 @@
 
 package graphs;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 public class App {
 
 
@@ -12,17 +15,37 @@ public class App {
 
         Graph<String> graph = new Graph();
 
-        Vertex<String> vertex1 = graph.addNode("Mariam");
-        Vertex<String> vertex2 = graph.addNode("Yousef");
 
-        for (Vertex<String> vertex:
-                graph.getNodes()) {
-            System.out.println(vertex.getKey());
-        }
 
-        graph.addEdge(vertex1,vertex2,5);
+        Vertex<String> vertex1 = graph.addNode("Pandora");
+        Vertex<String> vertex2 = graph.addNode("Mariam");
+        Vertex<String> vertex3 = graph.addNode("Metro");
+        Vertex<String> vertex4 = graph.addNode("Hanan");
+//        Vertex<String> vertex4 = graph.addNode("Eman");
+        graph.addEdge(vertex1,vertex2,26);
+        graph.addEdge(vertex1,vertex4,250);
+        graph.addEdge(vertex2,vertex3,82);
+        ArrayList<String> arrayList = new ArrayList<>();
+        arrayList.add("Pandora");
+//        arrayList.add("Mariam");
+        arrayList.add("Metro");
+        arrayList.add("Hanan");
 
-        System.out.println(graph.toString());
+        System.out.println(graph.getTripCost(graph, arrayList));
+//        for (Vertex<String> vertex:
+//                graph.getNodes()) {
+//            System.out.println(vertex.getKey());
+//        }
+//        graph.addEdge(vertex1,vertex2,5);
+//        System.out.println(graph.toString());
+
+//        graph.addEdge(vertex1,vertex3,5);
+//        graph.addEdge(vertex2,vertex4,5);
+//        Iterator itr = graph.breadthFirstTraverse(vertex1).iterator();
+//        while(itr.hasNext()) {
+//            Vertex<String> element = (Vertex<String>) itr.next();
+//            System.out.print(element.getKey() + " ");
+//        }
 
     }
 
