@@ -3,12 +3,129 @@
  */
 package graphs;
 
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
 import static org.junit.jupiter.api.Assertions.*;
 
-class AppTest {
-    @Test void appHasAGreeting() {
-        App classUnderTest = new App();
-        assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
+class ImplementationTest {
+    Graph<String> graph;
+    Vertex<String> vertex1;
+    Vertex<String> vertex2;
+
+    @BeforeEach
+    void createGraph(){
+         graph = new Graph();
+
+        vertex1 = graph.addNode("Yousef");
+        vertex2 = graph.addNode("Ahmad");
+        graph.addEdge(vertex1,vertex2,5);
+    }
+    @Test void implementTest2(){
+
+        assertEquals("Yousef:[5] ; Ahmad:[5] ; ",graph.toString());
+    }
+//    // test getting edges connected to the given node alongside with their weights
+//    @Test void implementTest3(){
+//        graph.addEdge(vertex1,vertex2,5);
+//        Iterator itr1 = graph.getNeighbors(vertex1).keySet().iterator();
+//        Iterator itr2 = graph.getNeighbors(vertex1).values().iterator();
+//        StringBuilder stringBuilder = new StringBuilder();
+//        while(itr1.hasNext()) {
+//            Vertex<String> element1 = (Vertex<String>) itr1.next();
+//            Vertex<String> element2 = (Vertex<String>) itr2.next();
+//            stringBuilder.append(element1);
+//            stringBuilder.append(":");
+//            stringBuilder.append(element2);
+//        }
+//        assertEquals("",stringBuilder.toString());
+//    }
+}
+
+//class BFTest{
+//        @Test
+//    void BFTest(){
+//            Graph<String> graph = new Graph();
+//
+//            Vertex<String> vertex1 = graph.addNode("Yousef");
+//            Vertex<String> vertex2 = graph.addNode("Ahmad");
+//            Vertex<String> vertex3 = graph.addNode("Hanan");
+//            Vertex<String> vertex4 = graph.addNode("Eman");
+//            graph.addEdge(vertex1,vertex2,5);
+//            graph.addEdge(vertex1,vertex3,5);
+//            graph.addEdge(vertex2,vertex4,5);
+//            ArrayList<String> names = new ArrayList<>();
+//            Iterator itr = graph.breadthFirstTraverse(vertex1).iterator();
+//            while(itr.hasNext()) {
+//                Vertex<String> element = (Vertex<String>) itr.next();
+//                names.add(element.getKey());
+//            }
+//            ArrayList<String> test = new ArrayList<>();
+//            test.add("Yousef");
+//            test.add("Ahmad");
+//            test.add("Hanan");
+//            test.add("Eman");
+//            assertEquals(test, names);
+//        }
+//}
+
+class tripCostTest{
+    Graph<String> graph;
+    ArrayList<String> arrayList;
+    @BeforeEach
+    void createGraph(){
+        graph = new Graph();
+        arrayList = new ArrayList<>();
+
+    }
+
+    @Test
+    void directTripCost(){
+
+        Vertex<String> vertex1 = graph.addNode("Pandora");
+        Vertex<String> vertex2 = graph.addNode("Metro");
+
+        graph.addEdge(vertex1,vertex2,26);
+
+        arrayList.add("Pandora");
+        arrayList.add("Metro");
+
+        assertEquals("TRUE, 26",graph.getTripCost(graph, arrayList));
+    }
+
+    @Test
+    void nonDirectTripCost(){
+        Vertex<String> vertex1 = graph.addNode("Pandora");
+        Vertex<String> vertex2 = graph.addNode("Metro");
+        Vertex<String> vertex3 = graph.addNode("Naboo");
+
+        graph.addEdge(vertex1,vertex2,42);
+        graph.addEdge(vertex2,vertex3,73);
+
+        arrayList.add("Pandora");
+        arrayList.add("Metro");
+        arrayList.add("Naboo");
+
+        assertEquals("TRUE, 115",graph.getTripCost(graph, arrayList));
+
+    }
+
+    @Test
+    void noLinkTripCost(){
+        Vertex<String> vertex1 = graph.addNode("Pandora");
+        Vertex<String> vertex2 = graph.addNode("Metro");
+        Vertex<String> vertex3 = graph.addNode("Naboo");
+
+        graph.addEdge(vertex1,vertex2,42);
+        graph.addEdge(vertex2,vertex3,73);
+
+        arrayList.add("Pandora");
+        arrayList.add("Naboo");
+
+        assertEquals("FALSE, 0",graph.getTripCost(graph, arrayList));
     }
 }
