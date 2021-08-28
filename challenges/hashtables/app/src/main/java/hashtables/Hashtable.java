@@ -79,6 +79,10 @@ public class Hashtable<K,V> {
         return null;
     }
 
+
+    /**
+     * adds new node to hashtable
+     */
     public void add(K key, V value){
         int hashcode = getHash(key);
         int index = getIndex(key);
@@ -118,6 +122,9 @@ public class Hashtable<K,V> {
         }
     }
 
+    /**
+     * removes the specified key
+     */
     public V remove(K key){
         int hashCode = getHash(key);
         int index = getIndex(key);
@@ -147,6 +154,7 @@ public class Hashtable<K,V> {
         return head.getValue();
     }
 
+
     public boolean contains(K key){
         int hashCode = getHash(key);
         int index = getIndex(key);
@@ -160,6 +168,9 @@ public class Hashtable<K,V> {
         return false;
     }
 
+    /**
+     * get first repeated word within a string
+     */
     public String getRepeatedWord(String sentence){
         String[] arrayOfWords = splitString(sentence);
         for (String word:
@@ -183,12 +194,14 @@ public class Hashtable<K,V> {
         return "There is no repeated word!";
     }
 
-
     public String[] splitString(String sentence){
         sentence = sentence.replaceAll("[^a-zA-Z0-9]", " ");
         return sentence.split(" ");
     }
 
+    /**
+     * get intersection between two binary trees
+     */
     public ArrayList<K> getIntersection(BinaryTree<K> binaryTree1, BinaryTree<K> binaryTree2){
         ArrayList<K> treeArr1 = traverseBinaryTree(binaryTree1.getRoot());
         traverseArr = new ArrayList<>();
@@ -215,7 +228,6 @@ public class Hashtable<K,V> {
     public Hashtable<String,ArrayList<String>> leftJoin(Hashtable<String,String> left,Hashtable<String,String> right){
         Hashtable<String,ArrayList<String>> newHash = new Hashtable<>();
         ArrayList<String> values;
-
         for (String key:
              left.getKeys()) {
             values = new ArrayList<>();
@@ -231,7 +243,6 @@ public class Hashtable<K,V> {
         }
         return newHash;
     }
-
 
     @Override
     public String toString() {

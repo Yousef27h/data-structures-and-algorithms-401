@@ -119,3 +119,17 @@ clone down this repo.
 Make sure you have modified the applicaton.properties file with your own environment variables:
 
 To run this code you can either run the App.java file inside src/main/java/insertion/sort folder, which contains four array samples to run the insertion sort method on, or you can simple run the AppTest.java file which contains multiple tests to test our method.
+
+
+# Challenge 39 : Adjacency Matrix Transform (Mock interview)
+
+write a function that transform adjacency matrix into adjacency list
+
+input: array of arrays of integers
+
+output: adjacency list
+
+## Whiteboard Process
+
+![BFT](./transform.JPG)
+

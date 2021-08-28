@@ -26,3 +26,7 @@ coding challenges during 401 software development course at ASAC
 |20 | Challenge-23 | [Hashtable Implementation](https://github.com/Yousef27h/data-structures-and-algorithms-401/blob/main/challenges/hashtables/README.md) |
 |21 | Challenge-24 | [Repeated Word](https://github.com/Yousef27h/data-structures-and-algorithms-401/blob/main/challenges/hashtables/README.md) |
 |22 | Challenge-25 | [Intersection trees](https://github.com/Yousef27h/data-structures-and-algorithms-401/blob/main/challenges/hashtables/README.md) |
+|23 | Challenge-26 | [Breadth First Traverse Graphs](https://github.com/Yousef27h/data-structures-and-algorithms-401/blob/main/challenges/graphs/README.md) |
+|24 | Challenge-27 | [Trip Cost](https://github.com/Yousef27h/data-structures-and-algorithms-401/blob/main/challenges/graphs/README.md) |
+|25 | Challenge-28 | [Depth First Traverse Graphs](https://github.com/Yousef27h/data-structures-and-algorithms-401/blob/main/challenges/graphs/README.md) |
+|26 | Challenge-29 | [Adjacency Matrix Transform](https://github.com/Yousef27h/data-structures-and-algorithms-401/blob/main/challenges/graphs/README.md) |
