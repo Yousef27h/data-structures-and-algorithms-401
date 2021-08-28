@@ -73,6 +73,7 @@ public class Graph<T> {
         return graphMap.keySet().size();
     }
 
+
     public List<Integer> getValues(Map<Vertex<T>,Integer> map){
         List<Integer> values = new ArrayList<>();
         for (Vertex<T> key:
@@ -82,6 +83,9 @@ public class Graph<T> {
         return values;
     }
 
+    /**
+     * Traverse through graph using breadth first traverse principle
+     */
     public Set<Vertex<T>> breadthFirstTraverse(Vertex<T> vertex){
             Set<Vertex<T>> visited = new LinkedHashSet<>();
             Queue<Vertex<T>> queue = new LinkedList<>();
@@ -100,6 +104,9 @@ public class Graph<T> {
             return visited;
     }
 
+    /**
+     * returns whether edges contain specified data as key or not
+     */
     public boolean contains(Map<Vertex<String>,Integer> map, String data){
         ArrayList<Vertex<String>> verticesArray = new ArrayList<>();
         verticesArray.addAll(map.keySet());
@@ -146,6 +153,26 @@ public class Graph<T> {
             }
         }
         return "TRUE, "+ sum;
+    }
+
+    /**
+     * Traverse through graph using depth first traverse principle
+     */
+    public Set<Vertex<T>> depthFirstTraverse(Vertex<T> vertex){
+        Set<Vertex<T>> visited = new LinkedHashSet<>();
+        Stack<Vertex<T>> stack = new Stack<>();
+        stack.add(vertex);
+        while (!stack.isEmpty()){
+            Vertex<T> popped= stack.pop();
+            if (!visited.contains(popped)){
+                visited.add(popped);
+                for (Vertex<T> edge:
+                     this.graphMap.get(popped).keySet()) {
+                    stack.add(edge);
+                }
+            }
+        }
+        return visited;
     }
 
     @Override
