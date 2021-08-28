@@ -12,5 +12,4 @@ public class Vertex<T> {
         return key;
     }
 
-
 }

@@ -42,7 +42,7 @@ Include the weight of the connection in the returned collection
 Arguments: none
 Returns the total number of nodes in the graph
 
-# Challenge 36
+# Challenge 36 : Breadth First Traverse in Graphs
 
 Implement a breadth-first traversal on a graph.
 
@@ -68,7 +68,7 @@ Make sure you have modified the applicaton.properties file with your own environ
 
 To run this code you can either run the App.java file inside src/main/java/insertion/sort folder, which contains four array samples to run the insertion sort method on, or you can simple run the AppTest.java file which contains multiple tests to test our method.
 
-# Challenge 36
+# Challenge 37 : Trip Cost
 
 Write a function that determines whether the trip is possible with direct flights, and how much it would cost.
 
@@ -94,3 +94,28 @@ Make sure you have modified the applicaton.properties file with your own environ
 
 To run this code you can either run the App.java file inside src/main/java/insertion/sort folder, which contains four array samples to run the insertion sort method on, or you can simple run the AppTest.java file which contains multiple tests to test our method.
 
+# Challenge 38 : Depth First Traverse in Graphs
+
+Conduct a depth first preorder traversal on a graph
+
+Arguments: Node (Starting point of search)
+
+Return: A collection of nodes in their pre-order depth-first traversal order
+
+## Whiteboard Process
+
+![BFT](./dft.JPG)
+
+
+## Solution
+
+
+To run the server application,
+
+clone down this repo.
+
+'cd' into the cloned repository in your terminal
+
+Make sure you have modified the applicaton.properties file with your own environment variables:
+
+To run this code you can either run the App.java file inside src/main/java/insertion/sort folder, which contains four array samples to run the insertion sort method on, or you can simple run the AppTest.java file which contains multiple tests to test our method.
